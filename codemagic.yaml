@@ -1,0 +1,12 @@
+workflows:
+  ios-workflow:
+    name: iOS Build Workflow
+    environment:
+      # Match these versions to your project requirements
+      flutter: "3.22.2"  # Your Flutter version
+      xcode: "15.2"      # Latest stable Xcode version
+    scripts:
+      - flutter pub get
+      - flutter build ios --debug --no-codesign --simulator
+    artifacts:
+      - build/ios/iphonesimulator/Runner.app
